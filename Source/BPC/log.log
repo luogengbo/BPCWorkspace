@@ -1,0 +1,4 @@
+main[2016-07-01 21:41:11673] || INFO || UserServiceImpl || Test log4j!
+  main[2016-07-01 21:42:11145] || INFO || UserServiceImpl || Test log4j! haha
+  main[2016-07-01 21:43:23976] || ERROR || UserServiceImpl || Test log4j! haha
+  

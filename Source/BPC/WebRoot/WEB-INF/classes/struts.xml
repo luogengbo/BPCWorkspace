@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+   <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.locale" value="zh_CN" />
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+	<constant name="struts.objectFactory" value="spring"/>
+	<constant name="struts.configuration.xml.reload" value="true"></constant>
+	<constant name="struts.custom.i18n.resources" value="globalMessages" />
+	<constant name="struts.action.extension" value="action,," />
+	<constant name="struts.action.excludePattern" value="/logout,/js/ueditor/*" />
+	
+	<include file="struts-action.xml"></include>
+	<include file="struts/homeAction.xml"></include>
+	
+	<!-- 定义一个名称为goods的包，继承struts 2的默认包，指定命名空间为"/goods" -->
+	<package name="login" namespace="/login" extends="struts-default">	
+	    <!-- 为GoodsAction类中的toOnSaleGoodsList方法配置映射 -->
+		<action name="loginhome" class="loginAction" method="loginHome">
+			<result name="success">/page/login/home.jsp</result>					
+		</action>
+		<action name="loginother" class="loginAction" method="loginOther">
+			<result name="success">/page/login/other.jsp</result>					
+		</action>
+	</package>
+</struts>    
